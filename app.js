@@ -6,9 +6,18 @@ var path = require('path');
 
 var app = express();
 
-app.use(logger('dev'));
+//body parser requirements
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': 'false'}));
+
+//mongoose
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb://localhost/movie)', {useMongoClient: true, promiseLibaray:
+require('bluebird') });
+.then(() => console.log('connection successful'));
+.catch((err) => console.error(err));
+app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //catch 404 and forward to error handler
