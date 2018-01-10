@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({'extended': 'false'}));
 //mongoose
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/movie)', {useMongoClient: true, promiseLibarary:
+mongoose.connect('mongodb://localhost/movie)', {promiseLibrary:
 require('bluebird') })
 	.then(() => console.log('connection successful'))
 	.catch((err) => console.error(err))

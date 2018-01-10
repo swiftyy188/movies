@@ -1,19 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var Deal = require('../models/Movie.js');
 
-// Check if server works
+// Home Page
 router.get('/', function(req, res, next){
-	Deal.find(function(err, deals){
+	Movie.find(function(err, deals){
 		if(err) return next(err);
-		res.json(deals);
+		res.json(movies);
 	});
 });
 
 router.post('/', function(req, res, next){
-	Deal.create(req.body, function(err, deal){
+	Movie.create(req.body, function(err, deal){
 		if(err) return next(err);
-		res.json(deal);
+		res.json(movie);
 	});
 });
 

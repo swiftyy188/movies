@@ -1,0 +1,5 @@
+mongod & 
+wait 
+npm start
+
+
