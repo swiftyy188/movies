@@ -19,8 +19,15 @@ require('bluebird') })
 	.then(() => console.log('connection successful'))
 	.catch((err) => console.error(err))
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/movies', express.static(path.join(__dirname, 'dist')));
 app.use('/movie', movie);
 
 //catch 404 and forward to error handler

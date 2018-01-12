@@ -1,3 +1,14 @@
-<p>
-  movies works!
-</p>
+<h1>Movies</h1>
+<div class="continer">
+	<dl *ngFor="let movie of movies">
+		<dt>name</dt>
+		<dd>{{movie.name}}</dd>
+		<dt>Description</dt>
+		<dd>{{movie.description}}</dd>
+		<dt>Original Price</dt>
+		<dd>{{movie.original_price}}</dd>
+		<dt>Sale Price</dt>
+		<dd>{{movie.sale_price}}</dd>
+		<dt>stupid</dt>
+	</dl>
+</div>
