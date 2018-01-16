@@ -26,8 +26,10 @@ app.use(function(req, res, next) {
 });
 
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/movies', express.static(path.join(__dirname, 'dist')));
+
+//Bankend routes
+
+// '/movie'
 app.use('/movie', movie);
 
 //catch 404 and forward to error handler

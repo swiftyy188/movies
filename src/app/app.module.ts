@@ -15,7 +15,11 @@ const appRoutes: Routes = [
 		path: '',
 		redirectTo: 'movies',
 		pathMatch: 'full'
-	}
+	},
+  {
+    path: 'home',
+    component: MoviesComponent
+  }
 ]
 
 @NgModule({
