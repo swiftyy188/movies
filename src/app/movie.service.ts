@@ -9,7 +9,7 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
 getMovies(){
-	return this.http.get('http://localhost:3000/movie')
+	return this.http.get('http:///localhost:3000/movie')
 	.pipe(
 		catchError(this.handleError)
 	);

@@ -18,4 +18,14 @@ router.post('/', function(req, res, next){
 	});
 });
 
+//Get Movie
+router.get('/:id', function(req, res, next){
+	Movie.findById(req.params.id, function(err, response){
+		if(err) return next(err);
+		res.json(response);
+	});
+});
+
+// router.post()
+
 module.exports = router;

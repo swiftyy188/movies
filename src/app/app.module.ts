@@ -6,8 +6,14 @@ import { AppComponent } from './app.component';
 import { CallbackComponent } from './callback.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieService } from './movie.service';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 const appRoutes: Routes = [
+  {
+    path:'movie-details/:id',
+    component: MovieDetailComponent,
+    data: {title: 'Movie Details'}
+  },
 	{
 		path: 'movies',
 		component: MoviesComponent
@@ -27,7 +33,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CallbackComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
