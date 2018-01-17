@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CallbackComponent } from './callback.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MovieService } from './movie.service';
 
 const appRoutes: Routes = [
 	{
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     	{ enableTracing: true}// debugging purpose only
     	)
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

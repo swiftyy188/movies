@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -9,9 +10,10 @@ import { HttpClient } from '@angular/common/http';
 export class MoviesComponent implements OnInit {
 
 movies: any;
-	constructor(private http: HttpClient) { }
+	constructor(private movieService: MovieService) { }
   ngOnInit() {
-  	this.http.get('http://localhost:3000/movie').subscribe(data => {
+  	// this.http.get('http://localhost:3000/movie').subscribe(data => {
+  	this.movieService.getMovies().subscribe(data=>{
   		this.movies = data;
   	})
   }
