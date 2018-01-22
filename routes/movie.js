@@ -3,14 +3,14 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Movie = require('../models/Movie.js');
 
-// Home Page
+// Get Home
 router.get('/', function(req, res, next){
 	Movie.find(function(err, movies){
 		if(err) return next(err);
 		res.json(movies);
 	});
 });
-
+// Post Home 
 router.post('/', function(req, res, next){
 	Movie.create(req.body, function(err, movie){
 		if(err) return next(err);
@@ -26,6 +26,12 @@ router.get('/:id', function(req, res, next){
 	});
 });
 
-// router.post()
+//Save Movie
+router.post('/', function(req, res, next){
+	Movie.create(req.body, function (err, post){
+		if(err) return next (err);
+		res.json(post);
+	});
+});
 
 module.exports = router;

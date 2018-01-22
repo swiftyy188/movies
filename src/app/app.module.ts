@@ -2,15 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms/';
+
 import { AppComponent } from './app.component';
 import { CallbackComponent } from './callback.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieService } from './movie.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MovieCreateComponent } from './movie-create/movie-create.component';
 
 const appRoutes: Routes = [
   {
-    path:'movie-details/:id',
+    path: 'movie-create',
+    component: MovieCreateComponent,
+    data: {title: 'Movie Create'}
+  },
+  {
+    path: 'movie-detail/:id',
     component: MovieDetailComponent,
     data: {title: 'Movie Details'}
   },
@@ -34,10 +42,12 @@ const appRoutes: Routes = [
     AppComponent,
     CallbackComponent,
     MoviesComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    MovieCreateComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(
     	appRoutes,

@@ -1,26 +1,13 @@
-<h1>Movies</h1>
-<!-- <div class="continer">
-	<dl *ngFor="let movie of movies">
-		<dt>name</dt>
-		<dd>{{movie.name}}</dd>
-		<dt>Description</dt>
-		<dd>{{movie.description}}</dd>
-		<dt>Original Price</dt>
-		<dd>{{movie.original_price}}</dd>
-		<dt>Sale Price</dt>
-		<dd>{{movie.sale_price}}</dd>
-		<dt>stupid</dt>
-	</dl>
-</div> -->
+<div>
+	<h1>Movies</h1>
 
+</div>
 <dir class="container">
   <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand"></a>
-    </div>
     <ul class="nav navbar-nav">
       <li>
-        <a routerLink="/movies" routerlinkActive="selected">Movies</a>     
+        <a routerLink="/movies" routerlinkActive="selected">Movies!!!</a>    	
+        <button [routerLink]="['/movie-create']" class="btn btn-default btn-lg">Create</button>
       </li>
     </ul>
     <table class="table">
@@ -36,7 +23,7 @@
 			<tr *ngFor="let movie of movies">
 				<td>{{movie.name}}</td>
 				<td>
-					<a [routerLink]="['/movie-details', movie._id]" class="btn">More</a>
+					<a [routerLink]="['/movie-detail', movie._id]" class="btn">More</a>
 				</td>
 				<td>{{movie.original_price}}</td>
 				<td>{{movie.sale_price}}</td>
