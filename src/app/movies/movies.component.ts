@@ -8,8 +8,7 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-
-movies: any;
+  movies: any;
 	constructor(private movieService: MovieService) { }
   ngOnInit() {
   	// this.http.get('http://localhost:3000/movie').subscribe(data => {

@@ -24,6 +24,7 @@
 				<td>{{movie.name}}</td>
 				<td>
 					<a [routerLink]="['/movie-detail', movie._id]" class="btn">More</a>
+					<a [routerLink]="['/movie-edit', movie._id]" class="btn">Edit</a>
 				</td>
 				<td>{{movie.original_price}}</td>
 				<td>{{movie.sale_price}}</td>

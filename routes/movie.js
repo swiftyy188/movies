@@ -34,4 +34,12 @@ router.post('/', function(req, res, next){
 	});
 });
 
+//Update Movie
+router.put('/:id', function(req, res, next){
+	Movie.findByIdAndUpdate(req.params.id, req.body, function(err, post){
+		if(err) return next(err);
+		res.json(post);
+	});
+});
+
 module.exports = router;

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms/';
 
@@ -10,8 +10,14 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieService } from './movie.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieCreateComponent } from './movie-create/movie-create.component';
+import { MovieEditComponent } from './movie-edit/movie-edit.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'movie-edit/:id',
+    component: MovieEditComponent,
+    data: {title: 'Movie Edit'}
+  },
   {
     path: 'movie-create',
     component: MovieCreateComponent,
@@ -43,7 +49,8 @@ const appRoutes: Routes = [
     CallbackComponent,
     MoviesComponent,
     MovieDetailComponent,
-    MovieCreateComponent
+    MovieCreateComponent,
+    MovieEditComponent
   ],
   imports: [
     BrowserModule,
