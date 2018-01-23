@@ -14,11 +14,21 @@ movie = {}
 
   ngOnInit() {
   	this.getMovieDetail(this.route.snapshot.params['id']);
-  }
+  };
+
   getMovieDetail(id){
   	this.http.get('http://localhost:3000/movie/' + id).subscribe(movie => {
   		this.movie = movie;
   		console.log(movie);
   	});
-  }
-}
+  };
+
+  deleteMovie(id){
+    this.http.delete('http://localhost:3000/movie/' + id)
+    .subscribe(res =>{
+      this.router.navigate(['/movies/']);
+    }, (err) =>{
+      console.log(err);
+    });
+  };
+};
