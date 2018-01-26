@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ShoppingListService } from '.././shoppinglist.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MovieDetailComponent implements OnInit {
 movie = {}
 
-  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private list: ShoppingListService) { }
 
   ngOnInit() {
   	this.getMovieDetail(this.route.snapshot.params['id']);
@@ -29,6 +30,12 @@ movie = {}
       this.router.navigate(['/movies/']);
     }, (err) =>{
       console.log(err);
+    });
+  };
+  buyMovie(id){
+     this.http.get('http://localhost:3000/movie/' + id).subscribe(movie => {
+       this.list.shoppingList.push(movie);
+       console.log(this.list.shoppingList);
     });
   };
 };

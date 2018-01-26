@@ -1,4 +1,4 @@
-<div class="continer">
+<div class="container">
 	<dl>
 		<dt>name</dt>
 		<dd>{{movie.name}}</dd>
@@ -9,5 +9,6 @@
 		<dt>Sale Price</dt>
 		<dd>{{movie.sale_price}}</dd>
 	</dl>
+	<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
 	<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
 </div>

@@ -11,8 +11,14 @@ import { MovieService } from './movie.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
+import { ShoppingListService } from './shoppinglist.service';
+import { ShoppingDetailComponent } from './shopping-detail/shopping-detail.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'shopping-list',
+    component: ShoppingDetailComponent
+  },
   {
     path: 'movie-edit/:id',
     component: MovieEditComponent,
@@ -50,7 +56,8 @@ const appRoutes: Routes = [
     MoviesComponent,
     MovieDetailComponent,
     MovieCreateComponent,
-    MovieEditComponent
+    MovieEditComponent,
+    ShoppingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,7 @@ const appRoutes: Routes = [
     	{ enableTracing: true}// debugging purpose only
     	)
   ],
-  providers: [MovieService],
+  providers: [MovieService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
