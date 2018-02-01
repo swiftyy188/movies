@@ -18,18 +18,20 @@
 				<th>Description</th>
 				<th>Original Price</th>
 				<th>Sale Price</th>
+				<th>Options</th>
 			</tr>
 		</thead>    	
 		<tbody>
 			<tr *ngFor="let movie of movies">
-				<td>{{movie.name}}</td>
-				<td>
-					<button class="btn btn-success" (click)="buyMovie(movie._id)" >BUY</button>
-					<a [routerLink]="['/movie-detail', movie._id]" class="btn">More</a>
-					<a [routerLink]="['/movie-edit', movie._id]" class="btn">Edit</a>
-				</td>
+				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn">{{movie.name}}</a></td>
+				<td> {{movie.description}} </td>
 				<td>{{movie.original_price}}</td>
 				<td>{{movie.sale_price}}</td>
+				<td>
+					<button class="btn btn-success" (click)="buyMovie(movie._id)" >BUY</button>
+					<a [routerLink]="['/movie-edit', movie._id]" class="btn">Edit</a>
+				</td>
+
 
 			</tr>
 		</tbody>
