@@ -12,6 +12,8 @@ export class ShoppingDetailComponent implements OnInit {
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private list: ShoppingListService) { }
   shoppingList = []
+  quantity = [ 1,2,3,4,5,6,7,8,9,10 ];
+  quantityItem;
   ngOnInit() {
   	this.shoppingList = this.list.shoppingList
   }

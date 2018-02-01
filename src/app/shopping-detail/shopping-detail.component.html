@@ -1,23 +1,25 @@
 <div class="container">
 	<h1>Shopping List</h1>
-	<div *ngFor="let item of shoppingList">
-		<h1>--------------</h1>
-		<div>
-			<label>Name</label>
-			<div> {{item.name}} </div>
-		</div>
-		<div>
-			<label>Description</label>
-			<div> {{item.description}} </div>
-		</div>
-		<div>
-			<label>Original Price</label>
-			<div> {{item.original_price}} </div>
-		</div>
-		<div>
-			<label>Sale Price</label>
-			<div> {{item.sale_price}} </div>
-		</div>
-		<h1>--------------</h1>
-	</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Original Price</th>
+					<th>Sale Price</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let item of shoppingList">
+				<tr></tr>
+				<td> {{item.name}} </td>
+				<td> {{item.description}} </td>
+				<td> {{item.original_price}} </td>
+				<td> {{item.sale_price}} </td>
+
+                <select [(ngModel)]="quantityItem" >
+                	<option *ngFor="let x of quantity" [ngValue]="x">{{x}}</option>
+                </select>
+			</tbody>
+		</table>
 </div>
