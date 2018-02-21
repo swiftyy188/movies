@@ -26,6 +26,7 @@
 				<th>Name</th>
 				<th>Picture</th>
 				<th>Description</th>
+				<th>Rating</th>
 				<th>Original Price</th>
 				<th>Sale Price</th>
 				<th>Options</th>
@@ -36,6 +37,7 @@
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn">{{movie.name}}</a></td>
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a></td>
 				<td> {{movie.description}} </td>
+				<td> {{movie.rating}} </td>
 				<td>{{movie.original_price}}</td>
 				<td>{{movie.sale_price}}</td>
 				<td>
