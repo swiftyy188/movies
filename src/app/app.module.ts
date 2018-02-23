@@ -13,6 +13,7 @@ import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { ShoppingListService } from './shoppinglist.service';
 import { ShoppingDetailComponent } from './shopping-detail/shopping-detail.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const appRoutes: Routes = [
   {
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(

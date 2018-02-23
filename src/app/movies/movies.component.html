@@ -33,7 +33,8 @@
 			</tr>
 		</thead>    	
 		<tbody>
-			<tr *ngFor="let movie of movies">
+			<tr *ngFor="let movie of movies | paginate: { itemsPerPage: 1, currentPage: p}">
+
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn">{{movie.name}}</a></td>
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a></td>
 				<td> {{movie.description}} </td>
@@ -44,11 +45,11 @@
 					<button class="btn btn-success" (click)="buyMovie(movie._id)" >BUY</button>
 					<a [routerLink]="['/movie-edit', movie._id]" class="btn">Edit</a>
 				</td>
-
-
 			</tr>
+			
 		</tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
     <ul class="nav navbar-nav navbar-right">
       <li>
         <a>Log In</a>
