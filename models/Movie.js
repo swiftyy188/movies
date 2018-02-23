@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var MovieSchema = new mongoose.Schema({
 	name: String,
 	image: String,
-	rating: Number,
+	rating: Array,
 	description: String,
 	original_price: Number,
 	sale_price: Number,

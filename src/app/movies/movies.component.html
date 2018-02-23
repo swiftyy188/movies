@@ -33,12 +33,12 @@
 			</tr>
 		</thead>    	
 		<tbody>
-			<tr *ngFor="let movie of movies | paginate: { itemsPerPage: 1, currentPage: p}">
+			<tr *ngFor=" let movie of movies | paginate: { itemsPerPage: 5, currentPage: p}">
 
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn">{{movie.name}}</a></td>
 				<td><a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a></td>
 				<td> {{movie.description}} </td>
-				<td> {{movie.rating}} </td>
+				<td><div *ngFor= "let x of movie.rating" class="far fa-star"></div></td>
 				<td>{{movie.original_price}}</td>
 				<td>{{movie.sale_price}}</td>
 				<td>

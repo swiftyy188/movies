@@ -11,6 +11,7 @@ import { ShoppingListService } from '.././shoppinglist.service';
 export class MoviesComponent implements OnInit {
   movies: any;
   p: 1;
+  rating: number;
 	constructor(private movieService: MovieService, private http: HttpClient, private list: ShoppingListService) { }
   ngOnInit() {
   	// this.http.get('http://localhost:3000/movie').subscribe(data => {
