@@ -33,7 +33,7 @@
 					<label>Sale Price</label>
 					<input type="text" [(ngModel)]="movie.sale_price" name="sale_price" required>
 				</div>
-				<button type="submit" [disabled]="!movieForm.form.valid">Save</button>
+				<button class="btn btn-success" [disabled]="!movieForm.form.valid" type="submit">Save</button>
 			</form>
 		</div>
 		

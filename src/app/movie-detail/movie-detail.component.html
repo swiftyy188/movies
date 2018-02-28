@@ -2,8 +2,12 @@
 	<dl>
 		<dt>name</dt>
 		<dd>{{movie.name}}</dd>
+		<dt>Image</dt>
+		<dd> <img src="{{movie.image}}"> </dd>
 		<dt>Description</dt>
 		<dd>{{movie.description}}</dd>
+		<dt>Rating</dt>
+		<dd> <div *ngFor= "let x of movie.rating" class="far fa-star"></div> </dd>
 		<dt>Original Price</dt>
 		<dd>{{movie.original_price}}</dd>
 		<dt>Sale Price</dt>
@@ -11,4 +15,5 @@
 	</dl>
 	<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
 	<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
+	<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
 </div>
