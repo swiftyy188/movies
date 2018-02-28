@@ -7,17 +7,17 @@
 					<label>Name</label>
 					<input type="text"[(ngModel)]="movie.name" name="name" class="form-control" required>
 				</div>
-				<div>
+				<div class="form-group">
 					<label>Image</label>
-					<input type="text" [(ngModel)]="movie.image" name="image" required>
+					<input type="text" [(ngModel)]="movie.image" name="image" class="form-control" required>
 				</div>
 				<div class="form-group" >
 					<label>Description</label>
-					<input type="text" [(ngModel)]="movie.description" name="description" required>
+					<input type="text" [(ngModel)]="movie.description" name="description" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<label>Rating</label>
-					<select [(ngModel)]="rating" name="rating" required>
+					<select [(ngModel)]="rating" name="rating" class="form-control" required>
 						<option value=1>1 (Very Bad)</option>
 						<option value=2>2 (Not Good)</option>
 						<option value=3>3 (Good)</option>
@@ -27,11 +27,11 @@
 				</div>
 				<div class="form-group">
 					<label>Original Price</label>
-					<input type="text" [(ngModel)]="movie.original_price" name="original_price" required>
+					<input type="text" [(ngModel)]="movie.original_price" name="original_price" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<label>Sale Price</label>
-					<input type="text" [(ngModel)]="movie.sale_price" name="sale_price" required>
+					<input type="text" [(ngModel)]="movie.sale_price" name="sale_price" class="form-control" required>
 				</div>
 				<button class="btn btn-success" [disabled]="!movieForm.form.valid" type="submit">Save</button>
 			</form>
