@@ -1,30 +1,37 @@
-<div>
-	<tr>
-		<td>
-			<h1 class="movie-header">Movies</h1>
-		</td>
-		<td> 
-			<button [routerLink]="['/movie-create']" class="btn btn-default btn-lg">Create</button>
-		</td>
-		<td>
-		   	<button class="btn btn-success" type="button" [routerLink]="['/shopping-list']">Shopping List</button>
-		</td>
-	</tr>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movies</title>
+	</head>
+	<body>
+		<nav class="container2">
+			<div class="box1">
+				<a class="a" [routerLink]="['/movies']">Movie</a>
+			</div>
+			<div class="box1">
+				<a class="a" [routerLink]="['/movie-create']">Create</a>
+
+			</div>
+			<div class="box1">
+				<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+			</div>
+		</nav>
+		<br><br><br>
+		   
+		<!-- movies -->
+	 	<div class="container2">
+	  		<div *ngFor=" let movie of movies | paginate: { itemsPerPage: 3, currentPage: p}">
+				<div>
+					<a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a>
+				</div>
+	  		</div>
+	  	</div>
+
+	  <br><br><br>
+	  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+	</body>
+</html>
 
 
-</div>
-   
-<dir class="container">
-  <nav class="navbar navbar-default">
-  	<!-- movies -->
-  <div class="container1">
-  	<div *ngFor=" let movie of movies | paginate: { itemsPerPage: 2, currentPage: p}">
-  						<div><a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a>
-  						</div>
 
-  	</div>
-  </div>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-
-  </nav>

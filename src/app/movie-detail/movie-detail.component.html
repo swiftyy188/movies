@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movies</title>
+	</head>
+	<body>
+		<nav class="container2">
+			<div class="box1">
+				<a class="a" [routerLink]="['/movies']">Movie</a>
+			</div>
+			<div class="box1">
+				<a class="a" [routerLink]="['/movie-create']">Create</a>
+
+			</div>
+			<div class="box1">
+				<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+			</div>
+		</nav>
+		<br><br><br>
+		
 <div class="container">
 	<dl>
 		<dt>name</dt>
@@ -17,3 +37,12 @@
 	<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
 	<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
 </div>
+	   
+		
+	</body>
+</html>
+
+
+
+
+

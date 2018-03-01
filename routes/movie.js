@@ -10,6 +10,7 @@ router.get('/', function(req, res, next){
 		res.json(movies);
 	});
 });
+
 // Post Home 
 router.post('/', function(req, res, next){
 	Movie.create(req.body, function(err, movie){
