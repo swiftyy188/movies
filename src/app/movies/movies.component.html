@@ -3,21 +3,20 @@
 	<head>
 		<title>Movies</title>
 	</head>
-	<body>
-		<nav class="container2">
-			<div class="box1">
-				<a class="a" [routerLink]="['/movies']">Movie</a>
-			</div>
-			<div class="box1">
-				<a class="a" [routerLink]="['/movie-create']">Create</a>
+	<nav class="container2">
+		<div class="box1">
+			<a class="a" [routerLink]="['/movies']">Movie</a>
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/movie-create']">Create</a>
 
-			</div>
-			<div class="box1">
-				<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
-			</div>
-		</nav>
-		<br><br><br>
-		   
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+		</div>
+	</nav>
+	<body>
+		<br><br>			   
 		<!-- movies -->
 	 	<div class="container2">
 	  		<div *ngFor=" let movie of movies | paginate: { itemsPerPage: 3, currentPage: p}">
@@ -27,7 +26,7 @@
 	  		</div>
 	  	</div>
 
-	  <br><br><br>
+	  <br><br>
 	  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 	</body>

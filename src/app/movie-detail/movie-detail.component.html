@@ -3,42 +3,39 @@
 	<head>
 		<title>Movies</title>
 	</head>
-	<body>
-		<nav class="container2">
-			<div class="box1">
-				<a class="a" [routerLink]="['/movies']">Movie</a>
-			</div>
-			<div class="box1">
-				<a class="a" [routerLink]="['/movie-create']">Create</a>
+	<nav class="container2">
+		<div class="box1">
+			<a class="a" [routerLink]="['/movies']">Movie</a>
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/movie-create']">Create</a>
 
-			</div>
-			<div class="box1">
-				<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
-			</div>
-		</nav>
-		<br><br><br>
-		
-<div class="container">
-	<dl>
-		<dt>name</dt>
-		<dd>{{movie.name}}</dd>
-		<dt>Image</dt>
-		<dd> <img src="{{movie.image}}"> </dd>
-		<dt>Description</dt>
-		<dd>{{movie.description}}</dd>
-		<dt>Rating</dt>
-		<dd> <div *ngFor= "let x of movie.rating" class="far fa-star"></div> </dd>
-		<dt>Original Price</dt>
-		<dd>{{movie.original_price}}</dd>
-		<dt>Sale Price</dt>
-		<dd>{{movie.sale_price}}</dd>
-	</dl>
-	<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
-	<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
-	<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
-</div>
-	   
-		
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+		</div>
+	</nav>
+	<body>
+		<br>			
+		<div class="container">
+			<dl>
+				<dt>name</dt>
+				<dd>{{movie.name}}</dd>
+				<dt>Image</dt>
+				<dd> <img src="{{movie.image}}"> </dd>
+				<dt>Description</dt>
+				<dd>{{movie.description}}</dd>
+				<dt>Rating</dt>
+				<dd> <div *ngFor= "let x of movie.rating" class="far fa-star"></div> </dd>
+				<dt>Original Price</dt>
+				<dd>{{movie.original_price}}</dd>
+				<dt>Sale Price</dt>
+				<dd>{{movie.sale_price}}</dd>
+			</dl>
+			<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
+			<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
+			<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
+		</div>
 	</body>
 </html>
 

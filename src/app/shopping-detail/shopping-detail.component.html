@@ -1,29 +1,49 @@
-<div class="container">
-	<h1>Shopping List</h1>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Image</th>
-					<th>Description</th>
-					<th>Rating</th>
-					<th>Original Price</th>
-					<th>Sale Price</th>
-					<th>Quantity</th>
-				</tr>
-			</thead>
-			<tbody *ngFor="let item of shoppingList">
-				<tr></tr>
-				<td> {{item.name}} </td>
-				<td> <img class="image" src="{{item.image}}"> </td>
-				<td> {{item.description}} </td>
-				<td> {{item.rating}} </td>
-				<td> {{item.original_price}} </td>
-				<td> {{item.sale_price}} </td>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<nav class="container2">
+		<div class="box1">
+			<a class="a" [routerLink]="['/movies']">Movie</a>
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/movie-create']">Create</a>
 
-                <select [(ngModel)]="quantityItem" >
-                	<option *ngFor="let x of quantity" [ngValue]="x">{{x}}</option>
-                </select>
-			</tbody>
-		</table>
-</div>
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+		</div>
+	</nav>
+	<body>
+		<div class="container">
+			<h1>Shopping List</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Image</th>
+						<th>Description</th>
+						<th>Rating</th>
+						<th>Original Price</th>
+						<th>Sale Price</th>
+						<th>Quantity</th>
+					</tr>
+				</thead>
+				<tbody *ngFor="let item of shoppingList">
+					<tr></tr>
+					<td> {{item.name}} </td>
+					<td> <img class="image" src="{{item.image}}"> </td>
+					<td> {{item.description}} </td>
+					<td> {{item.rating}} </td>
+					<td> {{item.original_price}} </td>
+					<td> {{item.sale_price}} </td>
+
+	                <select [(ngModel)]="quantityItem" >
+	                	<option *ngFor="let x of quantity" [ngValue]="x">{{x}}</option>
+	                </select>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

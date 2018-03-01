@@ -1,42 +1,64 @@
-<div class="container">
-	<h1>Edit Movie</h1>
-	<div class="row">
-		<div class="col-mid-6">
-			<form (ngSubmit)="saveMovie(movie._id)" #movieForm="ngForm">
-				<div class="form-group">
-					<label>Name</label>
-					<input type="text" [(ngModel)]="movie.name" name="name" class="form-control" required>
-				</div>
-				<div class="form-group">
-					<label>Image</label>
-					<input type="text" [(ngModel)]="movie.image" name="image" class="form-control" required="">					
-				</div>
-				<div class="form-group">
-					<label>Description</label>
-					<input type="text" [(ngModel)]="movie.description" name="description"  class="form-control" required>
-				</div>
-				<div class="form-group">
-					<label>Rating</label>
-					<select [(ngModel)]="movie.rating" name="rating" class="form-control" required>
-						<option value=1>1 (Very Bad)</option>
-						<option value=2>2 (Not Good)</option>
-						<option value=3>3 (Good)</option>
-						<option value=4>4 (Pretty Decent)</option>
-						<option value=5>5 (Awesome)</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Original Price</label>
-					<input type="text" [(ngModel)]="movie.original_price" name="original_price" class="form-control" required>
-				</div>
-				<div class="form-group">
-					<label>Sale Price</label>
-					<input type="text" [(ngModel)]="movie.sale_price" name="sale_price" class="form-control" required>
-				</div>
-				<button class="btn btn-success" [disabled]="!movieForm.form.valid" type="submit">Save</button>
-			</form>			
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<nav class="container2">
+		<div class="box1">
+			<a class="a" [routerLink]="['/movies']">Movie</a>
 		</div>
-		
-	</div>
-	
-</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/movie-create']">Create</a>
+
+		</div>
+		<div class="box1">
+			<a class="a" [routerLink]="['/shopping-list']">Shopping List</a>
+		</div>
+		<br><br><br>
+	</nav>
+	<body>
+		<div class="container">
+			<h1>Edit Movie</h1>
+			<div class="row">
+				<div class="col-mid-6">
+					<form (ngSubmit)="saveMovie(movie._id)" #movieForm="ngForm">
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" [(ngModel)]="movie.name" name="name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Image</label>
+							<input type="text" [(ngModel)]="movie.image" name="image" class="form-control" required="">					
+						</div>
+						<div class="form-group">
+							<label>Description</label>
+							<input type="text" [(ngModel)]="movie.description" name="description"  class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Rating</label>
+							<select [(ngModel)]="movie.rating" name="rating" class="form-control" required>
+								<option value=1>1 (Very Bad)</option>
+								<option value=2>2 (Not Good)</option>
+								<option value=3>3 (Good)</option>
+								<option value=4>4 (Pretty Decent)</option>
+								<option value=5>5 (Awesome)</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Original Price</label>
+							<input type="text" [(ngModel)]="movie.original_price" name="original_price" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Sale Price</label>
+							<input type="text" [(ngModel)]="movie.sale_price" name="sale_price" class="form-control" required>
+						</div>
+						<button class="btn btn-success" [disabled]="!movieForm.form.valid" type="submit">Save</button>
+					</form>			
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
