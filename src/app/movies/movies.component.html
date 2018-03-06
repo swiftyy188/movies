@@ -16,17 +16,15 @@
 		</div>
 	</nav>
 	<body>
-		<br><br>			   
+		<br>				   
 		<!-- movies -->
-	 	<div class="container2">
-	  		<div *ngFor=" let movie of movies | paginate: { itemsPerPage: 3, currentPage: p}">
+	 	<div class="container3">
+	  		<div *ngFor=" let movie of movies | paginate: { itemsPerPage: 8, currentPage: p}" class="hi">
 				<div>
 					<a [routerLink]="['/movie-detail', movie._id]" class="btn"><img class="image" src="{{movie.image}}"></a>
 				</div>
 	  		</div>
 	  	</div>
-
-	  <br><br>
 	  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 	</body>

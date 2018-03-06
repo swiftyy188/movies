@@ -1,6 +1,6 @@
 nav {
 	background-color: #000000; 
-	padding: 30px;
+	padding: 10px;
 	color: #FFFFFF;
 	font-size: 20px;
 }
@@ -19,13 +19,26 @@ nav {
 	margin: 30px 0px 0px 50px; 
 }
 
+/*images*/
 .image{
-	height: 280px;
-	width: 280px;
-	margin: 5px;
+	height: 180px;
+	width: 180px;
+	margin: 1px;
 }
+
+
 .container2{
 	display: flex;
 	flex-direction: row;
 
+}
+
+.container3{
+	display: block;
+	flex-direction: row;
+	width: 100%;
+
+}.hi{
+	width: 190px;
+	display: inline-block;
 }
