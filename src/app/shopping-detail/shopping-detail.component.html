@@ -35,9 +35,9 @@
 					<td> {{item.name}} </td>
 					<td> <img class="image" src="{{item.image}}"> </td>
 					<td> {{item.description}} </td>
-					<td> {{item.rating}} </td>
-					<td> {{item.original_price}} </td>
-					<td> {{item.sale_price}} </td>
+					<td> <div *ngFor= "let x of item.rating" class="far fa-star"></div></td>
+					<td> ${{item.original_price}} </td>
+					<td> ${{item.sale_price}} </td>
 
 	                <select [(ngModel)]="quantityItem" >
 	                	<option *ngFor="let x of quantity" [ngValue]="x">{{x}}</option>

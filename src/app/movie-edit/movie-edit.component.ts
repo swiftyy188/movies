@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./movie-edit.component.css']
 })
 export class MovieEditComponent implements OnInit {
-  movie = {}
-
+  movie;
+  rating:number;
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -18,9 +18,18 @@ export class MovieEditComponent implements OnInit {
   getMovieDetail(id){
   	this.http.get('http://localhost:3000/movie/' + id).subscribe(movie => {
   		this.movie = movie;
+      this.rating = this.movie.rating.length
   	});
   }
   saveMovie(id){
+    var i = 0;
+    var array = [];
+    while ( i < this.rating){
+      array.push(i);
+      i = i + 1;
+    }
+    this.movie.rating = array;
+
   	this.http.put('http://localhost:3000/movie/' + id, this.movie).subscribe(res => {
   		this.router.navigate(['/movies'])
   	}, (err)=> {

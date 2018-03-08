@@ -16,8 +16,35 @@
 		</div>
 	</nav>
 	<body>
-		<br>			
-		<div class="container">
+		<br>
+		<div class="container2">
+			<div><img class="image2" src="{{movie.image}}"></div>
+			<div>
+				<br>
+				<span class="title">Name</span>
+				<span>{{movie.name}}</span>
+				<br><br>
+				<span class="title">Description</span>
+				<span> {{movie.description}} </span>
+				<br><br>
+				<span class="title" >Rating</span>
+				<span><div *ngFor= "let x of movie.rating" class="far fa-star"></div></span>
+				<br><br>
+				<span class="title" >Original Price</span>
+				<span> ${{movie.original_price}} </span>
+				<br><br>
+				<span class="title" >Sale Price </span>
+				<span> ${{movie.sale_price}} </span>
+				<br><br>
+				<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
+				<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
+				<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
+			</div>
+			<div class="box"></div>
+
+		</div>
+		
+<!-- 		<div class="container">
 			<dl>
 				<dt>name</dt>
 				<dd>{{movie.name}}</dd>
@@ -35,7 +62,7 @@
 			<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
 			<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
 			<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>
-		</div>
+		</div> -->
 	</body>
 </html>
 

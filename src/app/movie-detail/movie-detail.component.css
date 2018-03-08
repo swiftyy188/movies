@@ -15,3 +15,16 @@ nav {
 	flex-direction: row;
 
 }
+
+.title{
+	font-weight: bold;
+}
+.box {
+	padding: 250px;
+}
+.image2{
+	height: 450px;
+	width: 350px;
+	padding: 20px;
+
+}
