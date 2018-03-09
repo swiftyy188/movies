@@ -36,6 +36,11 @@
 				<span class="title" >Sale Price </span>
 				<span> ${{movie.sale_price}} </span>
 				<br><br>
+				<span class="title">Quantity</span>
+	            <select [(ngModel)]="movie.quantity" >
+	            	<option *ngFor="let x of quantity" [ngValue]="x"> {{x}} </option>
+	            </select>
+				<br><br>
 				<button class="btn btn-success" type="button" (click)="buyMovie(movie._id)">BUY</button>
 				<button class="btn btn-danger" type="button" (click)="deleteMovie(movie._id)">Delete</button>
 				<a [routerLink]="['/movie-edit', movie._id]" type="button" class="btn btn-secondary">Edit</a>

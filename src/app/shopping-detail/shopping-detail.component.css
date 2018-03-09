@@ -1,7 +1,7 @@
 /*navbar*/
 nav {
     background-color: #000000; 
-    padding: 30px;
+    padding: 10px;
     color: #FFFFFF;
     font-size: 20px;
 }
@@ -18,10 +18,8 @@ nav {
     display: flex;
     flex-direction: row;
 }
-
 /*image*/
 .image {
     height: 50px;
     width: 50px;
 }
-

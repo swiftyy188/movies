@@ -39,7 +39,7 @@
 					<td> ${{item.original_price}} </td>
 					<td> ${{item.sale_price}} </td>
 
-	                <select [(ngModel)]="quantityItem" >
+	                <select class="quantity" [(ngModel)]="item.quantity" >
 	                	<option *ngFor="let x of quantity" [ngValue]="x">{{x}}</option>
 	                </select>
 				</tbody>

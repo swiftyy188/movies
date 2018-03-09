@@ -12,9 +12,13 @@ export class MovieDetailComponent implements OnInit {
 movie = {}
 
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private list: ShoppingListService) { }
+  shoppingList = []
+  quantity = [ 1,2,3,4,5,6,7,8,9,10 ];
+  quantityItem;
 
   ngOnInit() {
   	this.getMovieDetail(this.route.snapshot.params['id']);
+    this.shoppingList = this.list.shoppingList
   };
 
   getMovieDetail(id){
@@ -33,9 +37,8 @@ movie = {}
     });
   };
   buyMovie(id){
-     this.http.get('http://localhost:3000/movie/' + id).subscribe(movie => {
-       this.list.shoppingList.push(movie);
-       console.log(this.list.shoppingList);
-    });
+     console.log(this.movie);
+     this.list.shoppingList.push(this.movie);
+     console.log(this.list.shoppingList);
   };
 };

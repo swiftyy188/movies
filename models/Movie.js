@@ -6,6 +6,7 @@ var MovieSchema = new mongoose.Schema({
 	description: String,
 	original_price: Number,
 	sale_price: Number,
+	quantity: Number
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);
