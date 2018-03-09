@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShoppingListService } from '.././shoppinglist.service';
+import { MovieService } from  '.././movie.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -11,7 +12,7 @@ import { ShoppingListService } from '.././shoppinglist.service';
 export class MovieDetailComponent implements OnInit {
 movie = {}
 
-  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private list: ShoppingListService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private list: ShoppingListService, private movieService: MovieService) { }
   shoppingList = []
   quantity = [ 1,2,3,4,5,6,7,8,9,10 ];
   quantityItem;
@@ -40,5 +41,6 @@ movie = {}
      console.log(this.movie);
      this.list.shoppingList.push(this.movie);
      console.log(this.list.shoppingList);
+     this.movieService.popup(this.movie);
   };
 };

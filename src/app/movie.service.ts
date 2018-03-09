@@ -12,10 +12,10 @@ getMovies(){
 	return this.http.get('http:///localhost:3000/movie')
 	.pipe(
 		catchError(this.handleError)
-	);
-}
-	popup(item){
-		alert("You bought the" + item.name);
+		 );
+	}
+popup(item){
+		alert("Added " + item.name + " Shopping List");
 	}
 	private handleError(err: HttpClient | any){
 		console.error('an error occured', err);
