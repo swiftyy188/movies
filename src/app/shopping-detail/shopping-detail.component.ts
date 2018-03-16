@@ -10,11 +10,20 @@ import { ShoppingListService } from './../shoppinglist.service';
 })
 export class ShoppingDetailComponent implements OnInit {
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private list: ShoppingListService) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private list: ShoppingListService) { }
   shoppingList = []
   quantity = [ 1,2,3,4,5,6,7,8,9,10 ];
   quantityItem;
-  ngOnInit() {
+  
+  ngOnInit(){
   	this.shoppingList = this.list.shoppingList
   }
+  checkOut(shoppingList){
+    this.shoppingList = this.list.shoppingList
+    shoppingList = []
+    this.router.navigate(['/movies'])
+
+   alert("shipping will be recieved in 10 days");
+  }
 }
+
