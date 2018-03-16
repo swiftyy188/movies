@@ -19,8 +19,8 @@ export class ShoppingDetailComponent implements OnInit {
   	this.shoppingList = this.list.shoppingList
   }
   checkOut(shoppingList){
-    this.shoppingList = this.list.shoppingList
-    shoppingList = []
+    shoppingList = this.list.shoppingList;
+    this.list.shoppingList = [];
     this.router.navigate(['/movies'])
 
    alert("shipping will be recieved in 10 days");
